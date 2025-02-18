@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="username" class="label">Username</label>
+                <input type="text" id="username" name="username" required> <br>
+                <label for="email" class="label">Email</label>
+                <input type="email" id="email" name="email" required> <br>
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" name="password" required> <br>
+                <div class="password-hint" id="passwordHint">
+                    Password must be at least 4 characters long,one uppercase letter,one lowercase letter,one
+                    number,and one special character.
+                </div>
+                <span id="passwordError" class="error"></span>
+                <div class="password-strength" id="passwordStrength"></div>
+                <label for="confirmPassword"class="label">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div id="confirmPasswordError" class="error"></div><br> 
+                <button type="submit">Signup</button>
+            </div>
+            <span class="links">
+                <p>do you have an account? <a href="/loginpage.html">login</a></p>
+            </span>
+        </form>
+        <p id="message"></p>
+
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>

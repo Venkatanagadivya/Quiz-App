@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing:border-box;
+        }
+        body {
+            background-color: aquamarine;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            display: flex;
+        }
+        .flex-container > div {
+            background-color: white;
+            margin:auto;
+            padding : 50px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <button class="" onclick="openpage('Home', this,'white')">Home</button>
+    <button class="" onclick="openpage('Categories', this, 'white')"></button>
+    <button class="" onclick="openpage('Leaderboard', this, 'white')"></button>
+    <div id="Home">
+        <h1>Welcome to QUIz</h1>
+    </div>
+    <div id="Categories">
+    <div class="flex-container">
+        <div>Java</div>
+        <div>Python</div>
+        <div>JavaScript</div>
+    </div>
+    </div>
+</body>
+</html>

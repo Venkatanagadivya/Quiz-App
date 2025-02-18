@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #cefb7e;
+            background-image: linear-gradient(62deg, #cefb7e 0%, #000000 100%);
+        }
+        .login-container {
+            padding: 40px; 
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            width: 450px;  
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        h2 {
+            margin-bottom: 25px;
+            font-size: 28px; 
+            color: white;
+        }
+        input {
+            width: 100%;
+            padding: 9px;
+            margin: 14px 0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: border 0.3s ease-in-out;
+            
+        }
+        input:focus {
+            border: 2px solid olive;
+            outline: none;
+        }
+        .error {
+            color: red;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 470px;
+            padding: 14px;
+            background-color: olive;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px; /* Bigger button text */
+        }
+        button:hover {
+            background-color: #00b318;
+            transform: translateY(-2px); /* Lift effect */
+        }
+        .id {
+            color:white;
+            text-align:left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="id">
+            <label for="username" class="label">Username</label>
+            <input type="text" id="username" placeholder="Username">
+            <label for="password" class="label">Password</label>
+            <input type="password" id="password" placeholder="Password">
+            <div class="error" id="passError"></div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let userError = document.getElementById("userError");
+            let passError = document.getElementById("passError");
+
+            userError.textContent = "";
+            passError.textContent = "";
+
+            let valid = true;
+
+            if (username === "") {
+                userError.textContent = "Username is required.";
+                valid = false;
+            }
+
+            if (password === "") {
+                passError.textContent = "Password is required.";
+                valid = false;
+            } else if (password.length < 6) {
+                passError.textContent = "Password must be at least 6 characters.";
+                valid = false;
+            }
+            if (valid) {
+                alert("Login successful!");
+            }
+        });
+    </script>
+
+</body>
+</html>
